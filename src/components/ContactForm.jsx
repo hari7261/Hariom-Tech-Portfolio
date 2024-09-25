@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useState } from 'react';
 
 const WEB3FORMS_API_URL = 'https://api.web3forms.com/submit';

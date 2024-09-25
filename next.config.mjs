@@ -20,6 +20,9 @@ const nextConfig = {
       },
     ]
   },
+  images: {
+    domains: ['media.dev.to'],
+  },
 }
 
 const withMDX = nextMDX({

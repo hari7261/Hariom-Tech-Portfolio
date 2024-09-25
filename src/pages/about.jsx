@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // pages/about.js
 import Image from 'next/future/image'
 import Head from 'next/head'
