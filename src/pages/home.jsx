@@ -6,7 +6,7 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  TwitterIcon,
+  XIcon,
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
@@ -20,8 +20,8 @@ import image3 from '@/images/photos/hariom (3).jpg'
 import image4 from '@/images/photos/hariom (4).jpg'
 import image5 from '@/images/photos/hariom (2).jpg'
 import Cognifyz from '@/images/logos/cognifyz_techonologies_logo.jpeg'
-import internpe from '@/images/logos/interpe.jpeg'
-import bharatintern from '@/images/logos/bharat_intern_logo.jpeg'
+// import internpe from '@/images/logos/interpe.jpeg'
+// import bharatintern from '@/images/logos/bharat_intern_logo.jpeg'
 //import logoTXST from '@/images/logos/txstStar.png'
 import Projectsdev from '@/images/logos/batmandevloper.png'
 // import amazonIcon from '@/images/logos/royal.png'
@@ -108,20 +108,20 @@ function Resume() {
       start: 'Dec 2023',
       end: 'Jan 2024',
     },
-    {
-      company: 'Bharat Intern',
-      title: 'Project Intern',
-      logo: bharatintern,
-      start: 'Dec 2023',
-      end: 'Jan 2024',
-    },
-    {
-      company: 'InternPe',
-      title: 'Student Intern',
-      logo: internpe,
-      start: 'Oct 2023',
-      end: 'Nov 2023',
-    },
+    // {
+    //   company: 'Bharat Intern',
+    //   title: 'Project Intern',
+    //   logo: bharatintern,
+    //   start: 'Dec 2023',
+    //   end: 'Jan 2024',
+    // },
+    // {
+    //   company: 'InternPe',
+    //   title: 'Student Intern',
+    //   logo: internpe,
+    //   start: 'Oct 2023',
+    //   end: 'Nov 2023',
+    // },
     // {
     //   company: 'College Projects',
     //   title: 'Project Developer',
@@ -186,26 +186,29 @@ function Resume() {
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'];
+  let rotations = ['rotate-1', '-rotate-1', 'rotate-1', 'rotate-1', '-rotate-1'];
+
+  // You can have the images array as a prop or import it at the top of the file
+  const images = [image3, image1, image2, image4, image5]; 
 
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {images.map((image, imageIndex) => (
           <div
-            key={image.src}
+            key={image.src} // Ensure each image has a unique `src` value
             className={clsx(
               'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length],
-              'border-4 border-blue-500', // Add border with blue color
-              'shadow-[0_0_15px_rgba(0,0,255,0.75)]' // Neon blue glow effect
+              rotations[imageIndex % rotations.length], // Adds rotation based on index
+              'border-4 border-blue-500', // Blue border
+              'shadow-[0_0_15px_rgba(0,0,255,0.75)]' // Neon blue glow
             )}
           >
             <Image
               src={image}
-              alt=""
+              alt="" // It's a good idea to add alt descriptions if possible for accessibility
               sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover" // Ensures image covers the whole div
             />
           </div>
         ))}
@@ -300,7 +303,7 @@ export default function Home({ articles }) {
             <SocialLink
               href="https://twitter.com/Hari_Om_Pandit"
               aria-label="Follow on Twitter"
-              icon={TwitterIcon}
+              icon={XIcon}
             />
 
 

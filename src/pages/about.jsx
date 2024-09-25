@@ -4,13 +4,11 @@ import Image from 'next/future/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
-
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-  EmailIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 import ContactForm from '@/components/ContactForm'
@@ -41,11 +39,11 @@ function MailIcon(props) {
 }
 
 export default function About() {
-  return(
+  return (
     <>
       <Head>
         <title>About-Hariom Kumar😉</title>
-        <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4"/>
+        <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4" />
         <meta
           name="description"
           content="I'm Hariom Kumar, a software Developer in India."
@@ -59,8 +57,10 @@ export default function About() {
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 
+             border-4 border-blue-500 shadow-[0_0_15px_rgba(0,0,255,0.75)]" // Add border and glow effect
               />
+
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
@@ -106,16 +106,16 @@ export default function About() {
               >
                 Follow on LinkedIn
               </SocialLink>
-              
-            <SocialLink
-  href="mailto:hariompandit9999@gmail.com"
-  icon={(props) => <MailIcon {...props} color="currentColor" />} // Customize color here
-  className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
->
-  Mail me
-</SocialLink>
 
-  
+              <SocialLink
+                href="mailto:hariompandit9999@gmail.com"
+                icon={(props) => <MailIcon {...props} color="currentColor" />} // Customize color here
+                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+              >
+                Mail me
+              </SocialLink>
+
+
             </ul>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaTimes, FaGithubSquare, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 function NavLink({ href, children }) {
   return (
@@ -34,7 +34,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-teal-500 dark:hover:text-teal-400"
                 >
-                  <FaTwitter size={20} color="#1DA1F2" />
+                  <FaTimes size={20} color="black" />
                 </a>
                 <a
                   href="https://github.com/hari7261"
@@ -42,7 +42,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-teal-500 dark:hover:text-teal-400"
                 >
-                  <FaGithub size={20} color="#333" />
+                  <FaGithubSquare size={20} color="#333" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/hariom-kumar-pandit-2k3/"
