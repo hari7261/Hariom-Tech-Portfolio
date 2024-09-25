@@ -8,8 +8,8 @@ export async function generateRssFeed() {
   let articles = await getAllArticles()
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   let author = {
-    name: 'Victoria Jordan',
-    email: 'vjordan.cs@gmail.com',
+    name: 'Hariom Kumar',
+    email: 'hariompandit5556@gmail.com',
   }
 
   let feed = new Feed({
