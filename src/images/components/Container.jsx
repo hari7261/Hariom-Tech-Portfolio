@@ -11,6 +11,7 @@ const OuterContainer = forwardRef(function OuterContainer(
     </div>
   )
 })
+// const WEB3FORMS_API_KEY = '4e87fc6a-57b0-4dc7-aba8-cc3aa7bb4ab6'; //Web3Forms API key
 
 const InnerContainer = forwardRef(function InnerContainer(
   { className, children, ...props },

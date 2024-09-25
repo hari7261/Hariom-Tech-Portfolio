@@ -2,7 +2,6 @@ import Image from 'next/future/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
-
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -11,45 +10,26 @@ import {
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
+  BlogIcon,
+  ChatbotIcon,
+  OwlIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
-import logoDell from '@/images/logos/dell.svg'
-import logoFYPM from '@/images/logos/fypm1.svg'
-import logoGWC from '@/images/logos/gwcLogo1.png'
-import logoTXST from '@/images/logos/txstStar.png'
-import halcyoncore from '@/images/logos/hc-logo.png'
-import amazonIcon from '@/images/logos/amazonlogo.png'
+import image1 from '@/images/photos/hariom (1).jpg'
+import image2 from '@/images/photos/hariom.jpg'
+import image3 from '@/images/photos/hariom (3).jpg'
+import image4 from '@/images/photos/hariom (4).jpg'
+import image5 from '@/images/photos/hariom (2).jpg'
+import Cognifyz from '@/images/logos/cognifyz_techonologies_logo.jpeg'
+import internpe from '@/images/logos/interpe.jpeg'
+import bharatintern from '@/images/logos/bharat_intern_logo.jpeg'
+//import logoTXST from '@/images/logos/txstStar.png'
+import Projectsdev from '@/images/logos/batmandevloper.png'
+// import amazonIcon from '@/images/logos/royal.png'
 
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 
-function MailIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
 
 function BriefcaseIcon(props) {
   return (
@@ -110,87 +90,48 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
-function Newsletter() {
-  return (
-    <form
-      action="/thank-you"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
-      </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
-      </p>
-      <div className="mt-6 flex">
-        <input
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
-        </Button>
-      </div>
-    </form>
-  )
-}
 
 function Resume() {
   let resume = [
     {
-      company: 'Amazon',
-      title: 'Software Engineering Intern',
-      logo: amazonIcon,
-      start: 'May 2023',
-      end: 'Aug 2023',
-    },
-    {
-      company: 'HalcyonCore',
-      title: 'Co-Founder & Lead Engineer',
-      logo: halcyoncore,
-      start: 'March 2023',
+      company: 'College Projects',
+      title: 'Project Developer',
+      logo: Projectsdev,
+      start: '2023',
       end: 'Present',
     },
+
     {
-      company: 'Texas State VR Lab',
-      title: 'Virtual Reality Researcher',
-      logo: logoTXST,
-      start: 'Jan 2023',
-      end: 'Present',
+      company: 'Cognifyz Technologies',
+      title: 'Software Developer (Python)',
+      logo: Cognifyz, // You may want to add a logo if available
+      start: 'Dec 2023',
+      end: 'Jan 2024',
     },
     {
-      company: 'Girls Who Code TXST',
-      title: 'Founder & President',
-      logo: logoGWC,
-      start: 'Feb 2022',
-      end: 'Present',
+      company: 'Bharat Intern',
+      title: 'Project Intern',
+      logo: bharatintern,
+      start: 'Dec 2023',
+      end: 'Jan 2024',
     },
     {
-      company: 'FYPM App',
-      title: 'Front End Engineer Intern',
-      logo: logoFYPM,
-      start: 'April 2022',
-      end: 'July 2022',
+      company: 'InternPe',
+      title: 'Student Intern',
+      logo: internpe,
+      start: 'Oct 2023',
+      end: 'Nov 2023',
     },
-    {
-      company: 'Dell Technologies',
-      title: 'Software Engineer Intern',
-      logo: logoDell,
-      start: 'June 2022',
-      end: 'Aug 2022',
-    },
-    {
-      company: 'Dell Technologies',
-      title: 'Software Engineer Intern',
-      logo: logoDell,
-      start: 'May 2021',
-      end: 'Aug 2021',
-    },
-  ]
+    // {
+    //   company: 'College Projects',
+    //   title: 'Project Developer',
+    //   logo: Projectsdev,
+    //   start: '2023',
+    //   end: 'Present',
+    // },
+  ];
+
+  // Rest of your component code here
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
@@ -221,9 +162,8 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
+                aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end
+                  }`}
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}
@@ -237,16 +177,16 @@ function Resume() {
           </li>
         ))}
       </ol>
-      {/* <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="https://drive.google.com/file/d/1tlBiXU9CAqDBXoHL7S8Bq8YFsehES3m5/view?usp=sharing" variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button> */}
+      </Button>
     </div>
   )
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'];
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -256,7 +196,9 @@ function Photos() {
             key={image.src}
             className={clsx(
               'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
+              rotations[imageIndex % rotations.length],
+              'border-4 border-blue-500', // Add border with blue color
+              'shadow-[0_0_15px_rgba(0,0,255,0.75)]' // Neon blue glow effect
             )}
           >
             <Image
@@ -269,65 +211,119 @@ function Photos() {
         ))}
       </div>
     </div>
-  )
+  );
 }
+
 
 export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>Victoria Jordan - Leader, artist, and frontend enthusiast</title>
+        <title>Hariom Kumar | Portfolio😉</title>
+        <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4" />
+
+        <meta
+          name="title"
+          content="Hariom kumar - Full Stack Developer/Software Engineer "
+        />
         <meta
           name="description"
-          content="I'm Victoria Jordan. A leader, artist, and frontend enthusiast"
+          content="I'm Hariom, full stack developer/software engineer. I am on my journey to exploring the world of Softwares and AI."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hariom-portfolio-amber.vercel.app/home" />
+        <meta
+          property="og:title"
+          content="Hariom Kumar - Full Stack Developer/Software Engineer "
+        />
+        <meta
+          property="og:description"
+          content="I'm Hariom, full stack developer/software engineer. I am on my journey to exploring the world of Softwares and AI."
+        />
+        <meta
+          property="og:image"
+          content="https://avatars.githubusercontent.com/u/138400713?v=4"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://hariom-portfolio-amber.vercel.app/home" />
+        <meta
+          property="twitter:title"
+          content="Hariom Kumar - Full Stack Developer/Software Engineer "
+        />
+        <meta
+          property="twitter:description"
+          content="I'm Hariom, full stack developer/software engineer.  I am on my journey to exploring the world of Softwares and AI."
+        />
+        <meta
+          property="twitter:image"
+          content="https://avatars.githubusercontent.com/u/138400713?v=4"
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Leader, artist, and frontend enthusiast in Austin, TX.
+            Software Developer and AI Enthusiast.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Victoria, a computer science student and the Founder and
-            President of Girls Who Code at Texas State University. I am
-            passionate about frontend engineering, empowering women in tech, and
-            creating inclusive spaces for beginners in computer science.
+            I&apos;m Hariom , full stack developer/software engineer enthusiast. I am on my journey to exploring the world of Softwares and AI.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://github.com/vjordan-cs"
+              href="https://github.com/hari7261"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com/in/victoria-jordan01/"
+              href="https://www.linkedin.com/in/hariom-kumar-pandit-2k3/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
-
-            {/* <SocialLink
-              href="https://www.instagram.com/vjordan.cs/"
+            <SocialLink
+              href="https://www.instagram.com/me_hari3/"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
-            /> */}
-            {/* <SocialLink
-              href="https://twitter.com/cs__victoria"
+            />
+            {/* Add your blog link here */}
+            <SocialLink
+              href="https://tech-blogs-gray.vercel.app/" // Replace with your blog URL
+              aria-label="Visit my blog"
+              icon={BlogIcon} // Replace with your blog icon
+            />
+
+            <SocialLink
+              href="https://personal-chatbot-one.vercel.app/" // Replace with your chatbot URL
+              aria-label="Chat with AI"
+              icon={ChatbotIcon} // Use your chatbot icon here
+            />
+            <SocialLink
+              href="https://twitter.com/Hari_Om_Pandit"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
-            /> */}
+            />
+
+
+            <SocialLink
+              href="https://codolio.com/profile/hariompandit5556"
+              aria-label="Check it my codefolio"
+              icon={OwlIcon}
+            />
+
           </div>
+
         </div>
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          {/* <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
-          </div> */}
+          </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter /> */}
+            {/* <Newsletter/> */}
             <Resume />
           </div>
         </div>

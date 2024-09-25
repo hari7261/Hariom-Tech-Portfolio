@@ -1,3 +1,4 @@
+// pages/about.js
 import Image from 'next/future/image'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -5,12 +6,13 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import {
-  TwitterIcon,
-  InstagramIcon,
   GitHubIcon,
+  InstagramIcon,
   LinkedInIcon,
+  EmailIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import ContactForm from '@/components/ContactForm'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -38,13 +40,14 @@ function MailIcon(props) {
 }
 
 export default function About() {
-  return (
+  return(
     <>
       <Head>
-        <title>About - Victoria Jordan</title>
+        <title>About-Hariom Kumar😉</title>
+        <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4"/>
         <meta
           name="description"
-          content="I'm Victoria Jordan. A leader, artist, and frontend enthusiast in Austin, TX."
+          content="I'm Hariom Kumar, a software Developer in India."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -61,69 +64,66 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I&apos;m Victoria. A leader, artist, and frontend enthusiast in
-              Austin, TX.
+              I&apos;m Hariom😉. A software Developer Enthusiast.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I&apos;m a non-traditional first-generation student pursuing a
-                Bachelor of Science in Computer Science. I&apos;m entering my
-                senior year at Texas State University and I am the founder and
-                president of Girls Who Code TXST. My mission is to empower women
-                and non-binary students to take the reins of their independence
-                and become the leaders they have always admired.
+                I'm a Skilled Software Development and Frontend Development professional with <b>1+ years of experience in my college itself through freelance projects.</b> Building dynamic and responsive websites. Proven ability to develop parallel processing applications and integrating DevOps practices to streamline workflows. Adept at task prioritization using a proactive approach to overcome data-related challenges. An entrepreneur who has <b>launched SaaS products</b> and built <b>over 20+ open-source projects.</b> A quick learner able to easily pick up new skills and thrive in challenging solutions. Holds a <b>Bachelor of Engineering</b> in Computer Science and Engineering.
               </p>
               <p>
-                I&apos;ve traveled extensively through Southeast Asia and lived
-                in Shanghai, China for a year while teaching English. In 2020, I
-                launched an e-commerce store selling stickers and prints of my
-                artwork to generate donations for various organizations
-                supporting Black and transgender communities.
+                <b>Fluent</b> in English and Hindi <b>- Beginner in French.</b>
               </p>
+              <p><b>Areas of Expertise:</b></p>
               <p>
-                This past summer, I was a frontend engineer intern at a startup
-                called F*** You Pay Me, creating an app to help influencers (a
-                female-majority community) gain pay equality and fair treatment
-                when making deals with brands.
+                Software Engineering, Full Stack Development, Frontend Development, Web Development, DevOps, and SaaS Development
               </p>
-              <p>
-                In my free time, you can find me rock climbing, working out,
-                dancing, or at home spending quality time with my two
-                cockatiels.
-              </p>
+              <p><b>Industry Experience:</b></p>
+              <p>Software Developer (Python), virtual, Cognifyz Technologies.</p>
+              <p>Feel free to reach out to me.</p>
+              <p>Have a great day!</p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
               {/* <SocialLink href="#" icon={TwitterIcon}>
                 Follow on Twitter
-              </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-                Follow on Instagram
               </SocialLink> */}
+              <SocialLink href="https://www.instagram.com/me_hari3/" icon={InstagramIcon} className="mt-4">
+                Follow on Instagram
+              </SocialLink>
               <SocialLink
-                href="https://github.com/vjordan-cs"
+                href="https://github.com/hari7261"
                 icon={GitHubIcon}
                 className="mt-4"
               >
                 Follow on GitHub
               </SocialLink>
               <SocialLink
-                href="https://linkedin.com/in/victoria-jordan01/"
+                href="https://www.linkedin.com/in/hariom-kumar-pandit-2k3/"
                 icon={LinkedInIcon}
                 className="mt-4"
               >
                 Follow on LinkedIn
               </SocialLink>
-              <SocialLink
-                href="mailto:vjordan.cs@gmail.com"
-                icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-              >
-                vjordan.cs@gmail.com
-              </SocialLink>
+              
+            <SocialLink
+  href="mailto:hariompandit9999@gmail.com"
+  icon={(props) => <MailIcon {...props} color="currentColor" />} // Customize color here
+  className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+>
+  Mail me
+</SocialLink>
+
+  
             </ul>
           </div>
+        </div>
+        {/* Add the ContactForm component here */}
+        <div className="mt-16 sm:mt-32">
+          {/* <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 text-center">
+            Contact Me
+          </h2> */}
+          <ContactForm />
         </div>
       </Container>
     </>
