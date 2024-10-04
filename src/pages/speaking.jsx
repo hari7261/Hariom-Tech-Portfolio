@@ -61,7 +61,7 @@ export default function Speaking() {
           </SpeakingSection>
 
 
-          <SpeakingSection title="Project Intern at Bharat Intern – Online (Dec 2023 – Jan 2024)">
+          {/* <SpeakingSection title="Project Intern at Bharat Intern – Online (Dec 2023 – Jan 2024)">
             <Appearance
               href=""
               title="Leading Development Teams and Python Full Stack"
@@ -78,7 +78,7 @@ export default function Speaking() {
               event="InternPe"
               cta="Completed"
             />
-          </SpeakingSection>
+          </SpeakingSection> */}
   
         </div>
       </SimpleLayout>
