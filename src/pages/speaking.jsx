@@ -36,9 +36,13 @@ export default function Speaking() {
         />
       </Head>
       <SimpleLayout
-        title="My Professional Journey in Tech"
-        intro="Embarking on a path filled with innovation, leadership, and development, my career in technology and research spans various roles and achievements. Here's a glimpse into my professional experiences."
-      >
+  title={
+    <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-green-500 bg-clip-text text-transparent animate-gradient-fast">
+      My Professional Journey in Tech
+    </span>
+  }
+  intro="Embarking on a path filled with innovation, leadership, and development, my career in technology and research spans various roles and achievements. Here's a glimpse into my professional experiences."
+  >
         <div className="space-y-20">
           <SpeakingSection title="Freelance Researcher – Online/On-site (Jan 2024 – Present)">
             <Appearance

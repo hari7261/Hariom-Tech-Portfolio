@@ -265,12 +265,18 @@ export default function Home({ articles }) {
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Aspiring Software Developer and AI Enthusiast.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Hariom , Aspiring Software Developer. I am on my journey to exploring the world of Softwares and AI.
-          </p>
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+  <span className="bg-gradient-to-r from-blue-400 via-sky-500 to-indigo-600 bg-clip-text text-transparent animate-gradient-text">Aspiring</span>
+  <span className="bg-gradient-to-r from-green-300 via-lime-400 to-teal-500 bg-clip-text text-transparent animate-gradient-text"> Software Developer</span>
+  <span className="bg-gradient-to-r from-pink-400 via-red-500 to-orange-600 bg-clip-text text-transparent animate-gradient-text"> and</span>
+  <span className="bg-gradient-to-r from-purple-300 via-blue-400 to-pink-500 bg-clip-text text-transparent animate-gradient-text"> AI Enthusiast.</span>
+</h1>
+
+<p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+  I&apos;m <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent animate-gradient-text">Hariom</span>, an Aspiring <span className="bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-600 bg-clip-text text-transparent animate-gradient-text">Software Developer</span>. I am on my journey to exploring the world of <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent animate-gradient-text">Softwares</span> and <span className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent animate-gradient-text">AI</span>.
+</p>
+
+
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://github.com/hari7261"

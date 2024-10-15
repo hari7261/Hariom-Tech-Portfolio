@@ -64,9 +64,12 @@ export default function About() {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I&apos;m Hariom😉. A software Developer Enthusiast.
-            </h1>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+  I&apos;m <span className="bg-gradient-to-r from-blue-400 via-sky-500 to-indigo-600 bg-clip-text text-transparent animate-gradient-slow">Hariom</span>😉. 
+  A <span className="bg-gradient-to-r from-green-400 via-lime-500 to-teal-500 bg-clip-text text-transparent animate-gradient-fast">Software Developer</span> 
+  <span className="bg-gradient-to-r from-pink-400 via-red-500 to-orange-500 bg-clip-text text-transparent animate-gradient-slow"> Enthusiast</span>.
+</h1>
+
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 I'm a Skilled Software Development and Frontend Development professional with <b>1+ years of experience in my college itself through freelance projects.</b> Building dynamic and responsive websites. Proven ability to develop parallel processing applications and integrating DevOps practices to streamline workflows. Adept at task prioritization using a proactive approach to overcome data-related challenges. An entrepreneur who has <b>launched SaaS products</b> and built <b>over 20+ open-source projects.</b> A quick learner able to easily pick up new skills and thrive in challenging solutions. Holds a <b>Bachelor of Engineering</b> in Computer Science and Engineering.

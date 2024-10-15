@@ -222,10 +222,19 @@ export default function Projects() {
         <meta name="description" content="Things I’ve made trying to put my dent in the universe." />
       </Head>
       <SimpleLayout
-        title="A couple of my favorite personal projects."
-        intro="Here’s a collection of some projects I’m really proud of."
-      >
-        <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+  title={
+    <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-green-500 bg-clip-text text-transparent animate-gradient-fast">
+      A couple of my favorite personal projects.
+    </span>
+  }
+  intro={
+    <span className="bg-gradient-to-r from-saffron-400 via-yellow-400 to-green-500 bg-clip-text text-transparent animate-gradient-slow">
+      Here’s a collection of some projects I’m really proud of.
+    </span>
+  }
+>
+{/* Content of the layout goes here */}
+<ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <Card as="li" key={project.name}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
@@ -273,9 +282,6 @@ export default function Projects() {
     </div>
   </Card>
 ))}
-
-
-
           </ul>
         </section>
       </SimpleLayout>

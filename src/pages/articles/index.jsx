@@ -45,9 +45,14 @@ export default function ArticlesIndex({ articles }) {
         />
       </Head>
       <SimpleLayout
-        title="Writing on software development, company building, and marketing."
-        intro="All of my long-form thoughts on coding, leadership, product development, and more, collected in chronological order."
-      >
+  title={
+    <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-500 bg-clip-text text-transparent animate-gradient-fast">
+      Writing on software development, company building, and marketing.
+    </span>
+  }
+  intro="All of my long-form thoughts on coding, leadership, product development, and more, collected in chronological order."
+>
+
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
             {articles.map((article) => (
