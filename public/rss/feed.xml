@@ -4,7 +4,7 @@
         <title>Hariom Kumar</title>
         <link>undefined</link>
         <description>Your blog description</description>
-        <lastBuildDate>Wed, 25 Sep 2024 06:17:51 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 30 Oct 2024 07:39:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -61,7 +61,7 @@
 <li>Hariom Kumar pandit..</li>
 </ul>
 <hr/>
-<pre><code>Happy coding.....!
+<pre><code>Happy coding...!
 </code></pre>]]></content:encoded>
             <author>hariompandit5556@gmail.com (Hariom Kumar)</author>
         </item>
@@ -404,7 +404,7 @@
 <p>Leverage multi-threading, multiprocessing, or async programming to speed up tasks.</p>
 <h4><strong>5. Memory Optimization</strong></h4>
 <p>Use memory-efficient structures, recycle objects, and manage variable scopes wisely.</p>
-<h3>4. Unit Testing and Test-Driven Development (TDD)</h3>
+<h3>4. Unit Testing and Test-Driven Development.</h3>
 <p>Testing is critical for ensuring code quality. Unit Testing and TDD help catch bugs early and keep your codebase healthy.</p>
 <h4><strong>Unit Testing</strong></h4>
 <ul>
