@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
+import {SimpleLayout}  from '@/components/SimpleLayout'
 import {
   XIcon,
   InstagramIcon,
@@ -180,6 +181,7 @@ function Photos() {
   )
 }
 
+
 export default function Home({ articles }) {
   const [isDarkMode] = useState(false)
   return (
@@ -339,6 +341,7 @@ export default function Home({ articles }) {
           }
         `}</style>
       </Head>
+      <SimpleLayout/>
       <Container className="mt-6 sm:mt-9 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl glassmorphism mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">

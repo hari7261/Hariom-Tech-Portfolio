@@ -213,6 +213,7 @@ function LinkIcon(props) {
   )
 }
 
+
 export default function Projects() {
   return (
     <>
@@ -221,6 +222,7 @@ export default function Projects() {
         <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4" />
         <meta name="description" content="Things I’ve made trying to put my dent in the universe." />
       </Head>
+      {/* <FuturisticBackground /> */}
       <SimpleLayout
     title={
       <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-green-500 bg-clip-text text-transparent animate-gradient-fast">
