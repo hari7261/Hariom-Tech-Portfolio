@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 const WEB3FORMS_API_URL = 'https://api.web3forms.com/submit';
 const WEB3FORMS_API_KEY = '4e87fc6a-57b0-4dc7-aba8-cc3aa7bb4ab6'; // Web3Forms API key
-
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',

@@ -1,4 +1,5 @@
 import Image from 'next/future/image'
+import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -16,20 +17,12 @@ import {
 } from '@/components/SocialIcons'
 import image1 from '@/images/photos/hariom (1).jpg'
 import image2 from '@/images/photos/hariom.jpg'
-// import image3 from '@/images/photos/hariom (3).jpg'
 import image4 from '@/images/photos/hariom (4).jpg'
-// import image5 from '@/images/photos/hariom (2).jpg'
 import Cognifyz from '@/images/logos/cognifyz_techonologies_logo.jpeg'
-// import internpe from '@/images/logos/interpe.jpeg'
-// import bharatintern from '@/images/logos/bharat_intern_logo.jpeg'
-//import logoTXST from '@/images/logos/txstStar.png'
 import Projectsdev from '@/images/logos/batmandevloper.png'
-// import amazonIcon from '@/images/logos/royal.png'
-
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
-
 
 function BriefcaseIcon(props) {
   return (
@@ -69,27 +62,26 @@ function ArrowDownIcon(props) {
 
 function Article({ article }) {
   return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
+    <Card as="article" className="glassmorphism w-full">
+      <Card.Title href={`/articles/${article.slug}`} className="text-gradient text-base sm:text-lg md:text-xl lg:text-2xl">
         {article.title}
       </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
+      <Card.Eyebrow as="time" dateTime={article.date} decorate className="text-blue-400 text-sm sm:text-base">
         {formatDate(article.date)}
       </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read My Article</Card.Cta>
+      <Card.Description className="mt-2 text-sm sm:text-base">{article.description}</Card.Description>
+      <Card.Cta className="neon-text text-sm sm:text-base">Read My Article</Card.Cta>
     </Card>
   )
 }
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="social-icon-container" {...props}>
+      <Icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 social-icon" />
     </Link>
   )
 }
-
 
 function Resume() {
   let resume = [
@@ -100,71 +92,43 @@ function Resume() {
       start: '2023',
       end: 'Present',
     },
-
     {
       company: 'Cognifyz Technologies',
       title: 'Software Developer (Python)',
-      logo: Cognifyz, // You may want to add a logo if available
+      logo: Cognifyz,
       start: 'Dec 2023',
       end: 'Jan 2024',
     },
-    // {
-    //   company: 'Bharat Intern',
-    //   title: 'Project Intern',
-    //   logo: bharatintern,
-    //   start: 'Dec 2023',
-    //   end: 'Jan 2024',
-    // },
-    // {
-    //   company: 'InternPe',
-    //   title: 'Student Intern',
-    //   logo: internpe,
-    //   start: 'Oct 2023',
-    //   end: 'Nov 2023',
-    // },
-    // {
-    //   company: 'College Projects',
-    //   title: 'Project Developer',
-    //   logo: Projectsdev,
-    //   start: '2023',
-    //   end: 'Present',
-    // },
-  ];
-
-  // Rest of your component code here
+  ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+    <div className="glassmorphism-card">
+      <h2 className="flex text-sm sm:text-base font-semibold text-gradient">
+        <BriefcaseIcon className="h-5 w-5 sm:h-6 sm:w-6 flex-none animate-pulse" />
+        <span className="ml-3">Work Experience</span>
       </h2>
-      <ol className="mt-6 space-y-4">
+      <ol className="mt-4 sm:mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <li key={roleIndex} className="resume-item">
+            <div className="logo-container">
               <Image
                 src={role.logo}
                 alt=""
-                className="h-7 w-7 rounded-full"
+                className="h-6 w-6 sm:h-7 sm:w-7 rounded-full"
                 unoptimized
               />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd className="w-full flex-none text-sm sm:text-base font-medium text-gradient">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+              <dd className="text-xs sm:text-sm text-blue-400">
                 {role.title}
               </dd>
               <dt className="sr-only">Date</dt>
-              <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end
-                  }`}
-              >
+              <dd className="ml-auto text-xs sm:text-sm text-zinc-400 dark:text-zinc-500">
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}
                 </time>{' '}
@@ -177,161 +141,258 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="https://drive.google.com/file/d/1NvCkZ0ruM_yIEi213kJ81JeIgPAltqXB/view?usp=sharing" variant="secondary" className="group mt-6 w-full">
+      <Button
+        href="https://drive.google.com/file/d/1NvCkZ0ruM_yIEi213kJ81JeIgPAltqXB/view?usp=sharing"
+        variant="secondary"
+        className="neon-button mt-4 sm:mt-6 w-full sm:w-auto"
+      >
         Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        <ArrowDownIcon className="h-3 w-3 sm:h-4 sm:w-4 animate-bounce ml-2" />
       </Button>
     </div>
   )
 }
 
 function Photos() {
-  let rotations = ['-rotate-1', 'rotate-1', '-rotate-1'];
-
-  const images = [image1, image2, image4]; 
+  const images = [image1, image2, image4];
 
   return (
-    <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+    <div className="mt-8 sm:mt-12 md:mt-16">
+      <div className="-my-4 flex justify-center gap-3 sm:gap-4 md:gap-5 overflow-hidden py-4">
         {images.map((image, imageIndex) => (
           <div
-            key={image.src} 
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length], // Adds rotation based on index
-              'border-4 border-blue-500', // Blue border
-              'shadow-[0_0_15px_rgba(0,0,255,0.75)]' // Neon blue glow
-            )}
+            key={image.src}
+            className="photo-frame relative w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px]"
+            style={{
+              animationDelay: `${imageIndex * 200}ms`
+            }}
           >
             <Image
               src={image}
-              alt="" 
+              alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover" // Ensures image covers the whole div
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-
 export default function Home({ articles }) {
+  const [isDarkMode, setIsDarkMode] = useState(false)
   return (
     <>
       <Head>
         <title>Hariom Kumar | Portfolio😉</title>
         <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>{`
+          .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
 
-        <meta
-          name="title"
-          content="Hariom kumar - Full Stack Developer/Software Engineer "
-        />
-        <meta
-          name="description"
-          content="I'm Hariom, full stack developer/software engineer. I am on my journey to exploring the world of Softwares and AI."
-        />
+          .glassmorphism-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+          }
 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hariom-portfolio-amber.vercel.app/home" />
-        <meta
-          property="og:title"
-          content="Hariom Kumar - Full Stack Developer/Software Engineer "
-        />
-        <meta
-          property="og:description"
-          content="I'm Hariom, full stack developer/software engineer. I am on my journey to exploring the world of Softwares and AI."
-        />
-        <meta
-          property="og:image"
-          content="https://avatars.githubusercontent.com/u/138400713?v=4"
-        />
+          .text-gradient {
+            background: linear-gradient(
+              to right,
+              #00dbde,
+              #fc00ff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 8s linear infinite;
+            background-size: 200% auto;
+          }
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://hariom-portfolio-amber.vercel.app/home" />
-        <meta
-          property="twitter:title"
-          content="Hariom Kumar - Full Stack Developer/Software Engineer "
-        />
-        <meta
-          property="twitter:description"
-          content="I'm Hariom, full stack developer/software engineer.  I am on my journey to exploring the world of Softwares and AI."
-        />
-        <meta
-          property="twitter:image"
-          content="https://avatars.githubusercontent.com/u/138400713?v=4"
-        />
+          .neon-text {
+            color: #fff;
+            text-shadow: 0 0 10px #00fff2,
+                         0 0 20px #00fff2,
+                         0 0 40px #00fff2;
+          }
+
+          .neon-button {
+            position: relative;
+            overflow: hidden;
+            background: rgba(0, 255, 242, 0.1);
+            border: 1px solid #00fff2;
+            box-shadow: 0 0 5px #00fff2,
+                       0 0 20px rgba(0, 255, 242, 0.3);
+            transition: all 0.3s ease;
+          }
+
+          .photo-frame {
+            position: relative;
+            aspect-ratio: 9/10;
+            overflow: hidden;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            animation: float 6s ease-in-out infinite;
+          }
+
+          .social-icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+          }
+
+          @media (min-width: 640px) {
+            .social-icon-container {
+              width: 45px;
+              height: 45px;
+            }
+          }
+
+          @media (min-width: 768px) {
+            .social-icon-container {
+              width: 50px;
+              height: 50px;
+            }
+          }
+
+          .social-icon-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
+          }
+
+          .social-icon {
+            fill: #00fff2;
+            filter: drop-shadow(0 0 10px #00fff2);
+            transition: transform 0.3s;
+          }
+
+          .social-icon:hover {
+            transform: scale(1.1);
+          }
+
+          .logo-container {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 255, 242, 0.3);
+          }
+
+          .resume-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+          }
+
+          @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+          }
+
+          @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+
+          @media (max-width: 640px) {
+            .glassmorphism,
+            .glassmorphism-card {
+              padding: 16px;
+              border-radius: 12px;
+            }
+
+            .photo-frame {
+              border-radius: 12px;
+            }
+          }
+        `}</style>
       </Head>
-      <Container className="mt-9">
-        <div className="max-w-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-  <span className="bg-gradient-to-r from-blue-400 via-sky-500 to-indigo-600 bg-clip-text text-transparent animate-gradient-text">Aspiring</span>
-  <span className="bg-gradient-to-r from-green-300 via-lime-400 to-teal-500 bg-clip-text text-transparent animate-gradient-text"> Software Developer</span>
-  <span className="bg-gradient-to-r from-pink-400 via-red-500 to-orange-600 bg-clip-text text-transparent animate-gradient-text"> and</span>
-  <span className="bg-gradient-to-r from-purple-300 via-blue-400 to-pink-500 bg-clip-text text-transparent animate-gradient-text"> AI Enthusiast.</span>
-</h1>
+      <Container className="mt-6 sm:mt-9 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl glassmorphism mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+            <span className="text-gradient">Aspiring Software Developer</span>
+            <br />
+            <span className="text-gradient">and AI Enthusiast.</span>
+          </h1>
 
-<p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-  I&apos;m <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent animate-gradient-text">Hariom</span>, an Aspiring <span className="bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-600 bg-clip-text text-transparent animate-gradient-text">Software Developer</span>. I am on my journey to exploring the world of <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent animate-gradient-text">Softwares</span> and <span className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent animate-gradient-text">AI</span>.
-</p>
+          <p className="mt-6 text-base">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
+              I&apos;m
+            </span>{" "}
+            <span className={`${isDarkMode ? "text-green-300" : "text-green-600"} font-semibold`}>
+              Hariom,
+            </span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
+              an
+            </span>{" "}
+            <span className={`${isDarkMode ? "text-blue-300" : "text-blue-500"} font-semibold`}>
+              Aspiring Software Developer.
+            </span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
+              I am on my journey to exploring the world of
+            </span>{" "}
+            <span className={`${isDarkMode ? "text-purple-300" : "text-purple-500"} font-semibold`}>
+              Software
+            </span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
+              and
+            </span>{" "}
+            <span className={`${isDarkMode ? "text-orange-300" : "text-orange-500"} font-semibold`}>
+              AI...
+            </span>
+          </p>
 
-
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://github.com/hari7261"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/hariom-kumar-pandit-2k3/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
-            <SocialLink
-              href="https://www.instagram.com/me_hari3/"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            {/* Add your blog link here */}
-            <SocialLink
-              href="https://tech-blogs-gray.vercel.app/" // Replace with your blog URL
-              aria-label="Visit my blog"
-              icon={BlogIcon} // Replace with your blog icon
-            />
-
-            <SocialLink
-              href="https://personal-chatbot-one.vercel.app/" // Replace with your chatbot URL
-              aria-label="Chat with AI"
-              icon={ChatbotIcon} // Use your chatbot icon here
-            />
-            <SocialLink
-              href="https://twitter.com/Hari_Om_Pandit"
-              aria-label="Follow on Twitter"
-              icon={XIcon}
-            />
-
-
-            <SocialLink
-              href="https://codolio.com/profile/hariompandit5556"
-              aria-label="Check it my codefolio"
-              icon={OwlIcon}
-            />
-
+          <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4 md:gap-6 justify-center sm:justify-start">
+            <SocialLink href="https://www.instagram.com/me_hari3" icon={InstagramIcon} />
+            <SocialLink href="https://github.com/hari7261" icon={GitHubIcon} />
+            <SocialLink href="https://www.linkedin.com/in/hariom-kumar-pandit-2k3" icon={LinkedInIcon} />
+            <SocialLink href="https://tech-blogs-gray.vercel.app" icon={BlogIcon} />
+            <SocialLink href="https://personal-chatbot-one.vercel.app" icon={ChatbotIcon} />
+            <SocialLink href="https://codolio.com/profile/hariompandit5556" icon={OwlIcon} />
+            <SocialLink href="https://twitter.com/Hari_Om_Pandit" icon={XIcon} label="Twitter" />
           </div>
-
         </div>
       </Container>
       <Photos />
-      <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
+      <Container className="mt-16 sm:mt-20 md:mt-24 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-12 lg:max-w-none lg:grid-cols-2 lg:gap-x-8">
+          <div className="flex flex-col gap-12 sm:gap-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
           </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter/> */}
+          <div className="space-y-8 sm:space-y-10 lg:pl-8 xl:pl-12">
             <Resume />
           </div>
         </div>
