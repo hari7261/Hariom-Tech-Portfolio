@@ -188,6 +188,7 @@ export default function Home({ articles }) {
         <title>Hariom Kumar | Portfolio😉</title>
         <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Responsive css for the modern looking  portfolio */}
         <style>{`
           .glassmorphism {
             background: rgba(255, 255, 255, 0.05);
