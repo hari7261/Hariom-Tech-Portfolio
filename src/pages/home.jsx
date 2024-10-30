@@ -2,7 +2,7 @@ import Image from 'next/future/image'
 import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import clsx from 'clsx'
+// import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -181,7 +181,7 @@ function Photos() {
 }
 
 export default function Home({ articles }) {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode] = useState(false)
   return (
     <>
       <Head>
@@ -369,7 +369,7 @@ export default function Home({ articles }) {
               and
             </span>{" "}
             <span className={`${isDarkMode ? "text-orange-300" : "text-orange-500"} font-semibold`}>
-              AI...
+              AI...!
             </span>
           </p>
 
