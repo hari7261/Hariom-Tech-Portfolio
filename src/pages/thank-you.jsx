@@ -1,7 +1,5 @@
 import Head from 'next/head'
 
-import  SimpleLayout  from '@/components/SimpleLayout'
-
 export default function ThankYou() {
   return (
     <>
@@ -12,10 +10,14 @@ export default function ThankYou() {
           content="Thanks for subscribing to my newsletter."
         />
       </Head>
-      <SimpleLayout
-        title="Thanks for subscribing."
-        intro="I’ll send you an email any time I publish a new blog post, release a new project, or have anything interesting to share that I think you’d want to hear about. You can unsubscribe at any time, no hard feelings."
-      />
+      <div className="p-8">
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          Thanks for subscribing!
+        </h1>
+        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          You’ll hear from me soon.
+          </p>
+          </div>
     </>
   )
 }
