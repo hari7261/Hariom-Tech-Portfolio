@@ -78,6 +78,7 @@ const FuturisticBackground = () => {
     </div>
   );
 };
+// main simple layout component
 export function SimpleLayout({ title, intro, children }) {
   return (
     <Container className="mt-16 sm:mt-32">
