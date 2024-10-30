@@ -373,6 +373,7 @@ export default function Home({ articles }) {
             </span>
           </p>
 
+          {/* social icons */}
           <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4 md:gap-6 justify-center sm:justify-start">
             <SocialLink href="https://www.instagram.com/me_hari3" icon={InstagramIcon} />
             <SocialLink href="https://github.com/hari7261" icon={GitHubIcon} />
