@@ -96,7 +96,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6 text-base text-gray-400"
             >
-              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform transform hover:scale-105">
+              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl" />
                 <p className="relative">
                   I&apos;m a <span className="text-blue-400">Skilled Software Development and Frontend Development professional</span> with
@@ -110,7 +110,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform transform hover:scale-105">
+              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform ">
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-xl" />
                 <h3 className="text-lg font-semibold text-white mb-2">Areas of Expertise</h3>
                 <p className="relative">
@@ -118,7 +118,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform transform hover:scale-105">
+              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform ">
                 <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 to-pink-500/10 rounded-xl" />
                 <h3 className="text-lg font-semibold text-white mb-2">Industry Experience</h3>
                 <p className="relative">
