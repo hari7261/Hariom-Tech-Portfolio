@@ -28,13 +28,13 @@ export function Footer() {
     canvas.height = canvas.offsetHeight * window.devicePixelRatio;
     ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 
-    const particles = Array.from({ length: 100 }, () => ({
+    const particles = Array.from({ length: 150 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      dx: (Math.random() - 0.5) * 0.5,
-      dy: (Math.random() - 0.5) * 0.5,
-      size: Math.random() * 2 + 0.5,
-      color: `rgba(66, 153, 225, ${Math.random() * 0.5 + 0.3})`, // Modify color for dark blue
+      dx: (Math.random() - 0.5) * 1,
+      dy: (Math.random() - 0.5) * 1,
+      size: Math.random() * 5 + 2, // Increased size range for bigger bubbles
+      color: `rgba(66, 153, 225, ${Math.random() * 0.5 + 0.2})`,
     }));
 
     const animate = () => {
@@ -117,6 +117,36 @@ export function Footer() {
           </Container.Inner>
         </div>
       </Container.Outer>
+
+      {/* Additional Bubble Animation Components */}
+      {Array.from({ length: 10 }).map((_, index) => (
+        <div
+          key={index}
+          className={`absolute rounded-full bg-blue-500/10 backdrop-blur-sm`}
+          style={{
+            width: `${Math.random() * 50 + 30}px`, // Random width between 30px and 80px
+            height: `${Math.random() * 50 + 30}px`, // Random height between 30px and 80px
+            left: `${Math.random() * 100}%`,
+            bottom: '-50px',
+            animation: `float ${Math.random() * 5 + 5}s infinite`, // Random float duration between 5s and 10s
+            animationDelay: `${Math.random() * 5}s`,
+          }}
+        />
+      ))}
+
+      <style>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </footer>
   );
 }
