@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import BubbleBackground from '@/components/BubbleBackground'
 
 function ToolsSection({ children, ...props }) {
   return (
@@ -36,6 +37,7 @@ export default function Uses() {
           content="Software I use, gadgets I love, and other things I recommend."
         />
       </Head>
+      <BubbleBackground />
       <SimpleLayout
         title={
           <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-green-500 bg-clip-text text-transparent animate-gradient-fast">

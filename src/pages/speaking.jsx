@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import BubbleBackground from '@/components/BubbleBackground'
 
 function SpeakingSection({ children, ...props }) {
   return (
@@ -35,6 +36,7 @@ export default function Speaking() {
           content="Explore my professional journey and experiences in technology and research."
         />
       </Head>
+      <BubbleBackground />
       <SimpleLayout
   title={
     <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-green-500 bg-clip-text text-transparent animate-gradient-fast">

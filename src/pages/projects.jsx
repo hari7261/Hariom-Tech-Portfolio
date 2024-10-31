@@ -8,6 +8,7 @@ import youphoria from '@/images/logos/github-desktop.svg'
 import orb from '@/images/logos/orb.gif'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoHeart from '@/images/logos/gwc.png'
+import BubbleBackground from '@/components/BubbleBackground'
 // Project data with icons
 const projects = [
   {
@@ -222,6 +223,7 @@ export default function Projects() {
         <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4" />
         <meta name="description" content="Things I’ve made trying to put my dent in the universe." />
       </Head>
+      <BubbleBackground />
       {/* <FuturisticBackground /> */}
       <SimpleLayout
     title={
