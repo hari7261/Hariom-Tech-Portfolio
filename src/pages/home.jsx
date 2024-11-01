@@ -24,7 +24,7 @@ import Projectsdev from '@/images/logos/batmandevloper.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
-import BubbleBackground  from '@/components/BubbleBackground'
+import BubbleBackground from '@/components/BubbleBackground'
 
 function BriefcaseIcon(props) {
   return (
@@ -317,7 +317,7 @@ export default function Home({ articles }) {
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
           }
-
+            
           @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }

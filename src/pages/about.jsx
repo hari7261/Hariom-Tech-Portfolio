@@ -9,6 +9,7 @@ import { Container } from '@/components/Container';
 import { SimpleLayout } from '@/components/SimpleLayout';
 import portraitImage from '@/images/portrait.jpg';
 import ContactForm from '@/components/ContactForm';
+import GitHubStatsCard from '@/components/GitHubStatsComponent';
 
 export default function About() {
   return (
@@ -20,6 +21,41 @@ export default function About() {
           name="description"
           content="I'm Hariom Kumar, a Software Developer in India."
         />
+        <style>{`
+        .github-stats-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    margin: 0 auto; /* Centers the card */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+
+  .github-stats-card:hover {
+    transform: translateY(-4px); /* Subtle hover effect */
+  }
+
+  /* Medium devices (tablets, 640px and up) */
+  @media (min-width: 640px) {
+    .github-stats-card {
+      padding: 24px;
+      max-width: 500px;
+    }
+  }
+
+  /* Large devices (desktops, 1024px and up) */
+  @media (min-width: 1024px) {
+    .github-stats-card {
+      padding: 32px;
+      max-width: 600px;
+    }
+  }
+        `}</style>
       </Head>
       <SimpleLayout />
       <Container className="mt-16 sm:mt-32 relative">
@@ -108,6 +144,11 @@ export default function About() {
           </motion.div>
         </motion.div>
 
+        </Container>
+            {/* GitHub Stats Card */}
+            <Container className="mt-8 sm:mt-12 px-4 sm:px-6 lg:px-8">
+        <GitHubStatsCard />
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -116,6 +157,7 @@ export default function About() {
         >
           <ContactForm />
         </motion.div>
+
       </Container>
     </>
   );
