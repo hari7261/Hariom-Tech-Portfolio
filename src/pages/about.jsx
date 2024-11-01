@@ -1,24 +1,14 @@
 import React from 'react';
 import Image from 'next/future/image';
 import Head from 'next/head';
-import Link from 'next/link';
-import clsx from 'clsx';
+// import Link from 'next/link';
+// import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/Container';
-import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@/components/SocialIcons';
+// import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@/components/SocialIcons';
 import { SimpleLayout } from '@/components/SimpleLayout';
 import portraitImage from '@/images/portrait.jpg';
 import ContactForm from '@/components/ContactForm';
-function MailIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  );
-}
 
 export default function About() {
   return (
@@ -115,37 +105,6 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="lg:pl-20"
           >
-            <div className="space-y-6">
-              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl" />
-                <h3 className="text-lg font-semibold text-white mb-2">Contact Information</h3>
-                <p className="relative flex items-center space-x-2">
-                  <MailIcon className="w-5 h-5 text-blue-400" />
-                  <span>
-                    <a href="mailto:hariompandit556@gmail.com" className="text-blue-400 hover:underline">
-                      hariompandit556@gmail.com
-                    </a>
-                  </span>
-                </p>
-                <p className="relative flex items-center space-x-2">
-                  <GitHubIcon className="w-5 h-5 text-blue-400" />
-                  <span>
-                    <a href="www.github.com/hari7261" className="text-blue-400 hover:underline">
-                      www.github.com/hari7261
-                    </a>
-                  </span>
-                </p>
-                <p className="relative flex items-center space-x-2">
-                  <LinkedInIcon className="w-5 h-5 text-blue-400" />
-                  <span>
-                    <a href="www.linkedin.com/in/hariom-kumar-7261" className="text-blue-400 hover:underline">
-                      www.linkedin.com/in/hariom-kumar-7261
-                    </a>
-                  </span>
-                </p>
-              </div>
-            </div>
-
           </motion.div>
         </motion.div>
 
