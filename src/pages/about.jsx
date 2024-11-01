@@ -9,25 +9,6 @@ import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@/components/SocialIcon
 import { SimpleLayout } from '@/components/SimpleLayout';
 import portraitImage from '@/images/portrait.jpg';
 import ContactForm from '@/components/ContactForm';
-
-function SocialLink({ className, href, children, icon: Icon }) {
-  return (
-    <motion.li
-      className={clsx(className, 'flex')}
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-    >
-      <Link
-        href={href}
-        className="group flex text-sm font-medium text-white transition"
-      >
-        <Icon className="h-6 w-6 flex-none fill-blue-500 transition group-hover:fill-blue-300" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </motion.li>
-  );
-}
-
 function MailIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -134,27 +115,37 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="lg:pl-20"
           >
-            <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform transform hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-700/10 rounded-xl" />
-              <ul role="list" className="space-y-4 relative">
-                <SocialLink href="https://www.instagram.com/me_hari3/" icon={InstagramIcon}>
-                  Follow on Instagram
-                </SocialLink>
-                <SocialLink href="https://github.com/hari7261" icon={GitHubIcon}>
-                  Follow on GitHub
-                </SocialLink>
-                <SocialLink href="https://www.linkedin.com/in/hariom-kumar-pandit-2k3/" icon={LinkedInIcon}>
-                  Follow on LinkedIn
-                </SocialLink>
-                <SocialLink
-                  href="mailto:hariompandit9999@gmail.com"
-                  icon={MailIcon}
-                  className="mt-8 pt-8 border-t border-gray-700/40"
-                >
-                  Mail me
-                </SocialLink>
-              </ul>
+            <div className="space-y-6">
+              <div className="relative p-6 rounded-xl bg-gray-800 backdrop-blur-sm border border-gray-700 transition-transform">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl" />
+                <h3 className="text-lg font-semibold text-white mb-2">Contact Information</h3>
+                <p className="relative flex items-center space-x-2">
+                  <MailIcon className="w-5 h-5 text-blue-400" />
+                  <span>
+                    <a href="mailto:hariompandit556@gmail.com" className="text-blue-400 hover:underline">
+                      hariompandit556@gmail.com
+                    </a>
+                  </span>
+                </p>
+                <p className="relative flex items-center space-x-2">
+                  <GitHubIcon className="w-5 h-5 text-blue-400" />
+                  <span>
+                    <a href="www.github.com/hari7261" className="text-blue-400 hover:underline">
+                      www.github.com/hari7261
+                    </a>
+                  </span>
+                </p>
+                <p className="relative flex items-center space-x-2">
+                  <LinkedInIcon className="w-5 h-5 text-blue-400" />
+                  <span>
+                    <a href="www.linkedin.com/in/hariom-kumar-7261" className="text-blue-400 hover:underline">
+                      www.linkedin.com/in/hariom-kumar-7261
+                    </a>
+                  </span>
+                </p>
+              </div>
             </div>
+
           </motion.div>
         </motion.div>
 
