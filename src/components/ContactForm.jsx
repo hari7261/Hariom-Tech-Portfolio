@@ -79,7 +79,7 @@ export default function ContactForm() {
   if (!mounted) return null
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 text-gray-100 overflow-hidden">
+    <div className="flex justify-center items-center min-h-screen overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
           <Bubble key={i} size={Math.random() * 100 + 20} duration={Math.random() * 20 + 10} delay={Math.random() * 10} />
