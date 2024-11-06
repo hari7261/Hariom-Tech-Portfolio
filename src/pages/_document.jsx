@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
+import image from '../images/photos/image.png';
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -47,14 +48,14 @@ export default function Document() {
         <meta property="og:url" content="https://hariompandit.me" />
         <meta property="og:title" content="Hariom Kumar - Full Stack Developer/Software Engineer" />
         <meta property="og:description" content="I'm Hariom, a full stack developer/software engineer exploring the world of software and AI." />
-        <meta property="og:image" content="/src/images/photos/image.png" />
+        <meta property="og:image" content={image} />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://hariompandit.me" />
         <meta name="twitter:title" content="Hariom Kumar - Full Stack Developer/Software Engineer" />
         <meta name="twitter:description" content="I'm Hariom, a full stack developer/software engineer exploring the world of software and AI." />
-        <meta name="twitter:image" content="/src/images/photos/image.png" />
+        <meta name="twitter:image" content={image} />
 
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link rel="alternate" type="application/rss+xml" href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.xml`} />
