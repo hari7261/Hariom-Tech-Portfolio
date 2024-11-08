@@ -16,9 +16,9 @@ import {
   ChatbotIcon,
   OwlIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/hariom (1).jpg'
-import image2 from '@/images/photos/hariom.jpg'
-import image4 from '@/images/photos/hariom (4).jpg'
+import image1 from '@/images/photos/hariom (1).webp'
+import image2 from '@/images/photos/hariom.webp'
+import image4 from '@/images/photos/B612_20220904_084510_654.webp'
 import Cognifyz from '@/images/logos/cognifyz_techonologies_logo.jpeg'
 import Projectsdev from '@/images/logos/batmandevloper.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
@@ -61,6 +61,7 @@ function ArrowDownIcon(props) {
     </svg>
   )
 }
+
 
 function Article({ article }) {
   return (
@@ -172,7 +173,8 @@ function Photos() {
             <Image
               src={image}
               alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
+              quality={100}  // Ensures the highest quality image rendering
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"  // Adjusts image size based on screen width
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
@@ -183,6 +185,7 @@ function Photos() {
 }
 
 
+
 export default function Home({ articles }) {
   const [isDarkMode] = useState(false)
   return (
@@ -191,156 +194,149 @@ export default function Home({ articles }) {
         <title>Hariom Kumar | Portfolio😉</title>
         <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/138400713?v=4" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* Responsive css for the modern looking  portfolio */}
+        {/* Responsive css for the modern looking portfolio */}
         <style>{`
-          .glassmorphism {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          }
-
-          .glassmorphism-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-          }
-
-          .text-gradient {
-            background: linear-gradient(
-              to right,
-              #00dbde,
-              #fc00ff
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradient 8s linear infinite;
-            background-size: 200% auto;
-          }
-
-          .neon-text {
-            color: #fff;
-            text-shadow: 0 0 10px #00fff2,
-                         0 0 20px #00fff2,
-                         0 0 40px #00fff2;
-          }
-
-          .neon-button {
-            position: relative;
-            overflow: hidden;
-            background: rgba(0, 255, 242, 0.1);
-            border: 1px solid #00fff2;
-            box-shadow: 0 0 5px #00fff2,
-                       0 0 20px rgba(0, 255, 242, 0.3);
-            transition: all 0.3s ease;
-          }
-
-          .photo-frame {
-            position: relative;
-            aspect-ratio: 9/10;
-            overflow: hidden;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-            animation: float 6s ease-in-out infinite;
-          }
-
-          .social-icon-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(8px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-          }
-
-          @media (min-width: 640px) {
-            .social-icon-container {
-              width: 45px;
-              height: 45px;
+            .glassmorphism {
+              background: rgba(0, 0, 255, 0.05);
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(0, 0, 255, 0.1);
+              border-radius: 16px;
+              padding: 20px;
+              box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1);
             }
-          }
 
-          @media (min-width: 768px) {
-            .social-icon-container {
-              width: 50px;
-              height: 50px;
-            }
-          }
-
-          .social-icon-container:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
-          }
-
-          .social-icon {
-            fill: #00fff2;
-            filter: drop-shadow(0 0 10px #00fff2);
-            transition: transform 0.3s;
-          }
-
-          .social-icon:hover {
-            transform: scale(1.1);
-          }
-
-          .logo-container {
-            position: relative;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 10px rgba(0, 255, 242, 0.3);
-          }
-
-          .resume-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-          }
-            
-          @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-          }
-
-          @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-
-          @media (max-width: 640px) {
-            .glassmorphism,
             .glassmorphism-card {
-              padding: 16px;
-              border-radius: 12px;
+              background: rgba(0, 0, 255, 0.03);
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(0, 0, 255, 0.1);
+              border-radius: 16px;
+              padding: 24px;
+              box-shadow: 0 8px 32px rgba(0, 0, 255, 0.15);
+            }
+
+            .text-gradient {
+              background: linear-gradient(
+                to right,
+                #00dbde,
+                #fc00ff
+              );
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+              animation: gradient 8s linear infinite;
+              background-size: 200% auto;
+            }
+
+            .neon-button {
+              position: relative;
+              overflow: hidden;
+              background: rgba(0, 0, 255, 0.1);
+              border: 1px solid #0000ff;
+              box-shadow: 0 0 5px #0000ff,
+                   0 0 20px rgba(0, 0, 255, 0.3);
+              transition: all 0.3s ease;
             }
 
             .photo-frame {
-              border-radius: 12px;
+              position: relative;
+              aspect-ratio: 9/10;
+              overflow: hidden;
+              border-radius: 16px;
+              background: rgba(0, 0, 255, 0.05);
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(0, 0, 255, 0.1);
+              box-shadow: 0 8px 32px rgba(0, 0, 255, 0.15);
+              animation: float 6s ease-in-out infinite;
             }
-          }
-        `}</style>
+
+            .social-icon-container {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: rgba(0, 0, 0, 0.2);
+              backdrop-filter: blur(8px);
+              border: 2px solid rgba(0, 0, 255, 0.2);
+              transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            @media (min-width: 640px) {
+              .social-icon-container {
+                width: 45px;
+                height: 45px;
+              }
+            }
+
+            @media (min-width: 768px) {
+              .social-icon-container {
+                width: 50px;
+                height: 50px;
+              }
+            }
+
+            .social-icon-container:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 4px 20px rgba(0, 0, 255, 0.5);
+            }
+
+            .social-icon {
+              fill: #0000ff;
+              filter: drop-shadow(0 0 10px #0000ff);
+              transition: transform 0.3s;
+            }
+
+            .social-icon:hover {
+              transform: scale(1.1);
+            }
+
+            .logo-container {
+              position: relative;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: rgba(0, 0, 255, 0.05);
+              backdrop-filter: blur(5px);
+              border: 1px solid rgba(0, 0, 255, 0.1);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
+            }
+
+            .resume-item {
+              display: flex;
+              gap: 1rem;
+              padding: 1rem;
+              background: rgba(0, 0, 255, 0.02);
+              border-radius: 12px;
+              border: 1px solid rgba(0, 0, 255, 0.05);
+            }
+              
+            @keyframes float {
+              0%, 100% { transform: translateY(0); }
+              50% { transform: translateY(-10px); }
+            }
+
+            @keyframes gradient {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+
+            @media (max-width: 640px) {
+              .glassmorphism,
+              .glassmorphism-card {
+                padding: 16px;
+                border-radius: 12px;
+              }
+
+              .photo-frame {
+                border-radius: 12px;
+              }
+            }
+          `}</style>
       </Head>
       <SimpleLayout />
       <BubbleBackground />
@@ -353,29 +349,8 @@ export default function Home({ articles }) {
           </h1>
 
           <p className="mt-6 text-base">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
-              I&apos;m
-            </span>{" "}
-            <span className={`${isDarkMode ? "text-green-300" : "text-green-600"} font-semibold`}>
-              Hariom,
-            </span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
-              an
-            </span>{" "}
-            <span className={`${isDarkMode ? "text-blue-300" : "text-blue-500"} font-semibold`}>
-              Aspiring Software Developer.
-            </span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
-              I am on my journey to exploring the world of
-            </span>{" "}
-            <span className={`${isDarkMode ? "text-purple-300" : "text-purple-500"} font-semibold`}>
-              Software
-            </span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">
-              and
-            </span>{" "}
-            <span className={`${isDarkMode ? "text-orange-300" : "text-orange-500"} font-semibold`}>
-              AI...!
+            <span className="text-blue-500 font-semibold">
+              I&apos;m Hariom, an Aspiring Software Developer. I am on my journey to exploring the world of Software and AI...!
             </span>
           </p>
 
