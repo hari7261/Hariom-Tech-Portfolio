@@ -25,7 +25,7 @@ export default function QuantumLoader() {
     if (!isClient || !isLoading) return null;
 
     return (
-        <div className="fixed inset-0 bg-[#030014] overflow-hidden quantum-space">
+        <div className="fixed inset-0 bg-[#030014] overflow-hidden quantum-space flex items-end justify-center">
             {/* Quantum Field */}
             <div className="quantum-field">
                 {[...Array(20)].map((_, i) => (
@@ -327,8 +327,8 @@ export default function QuantumLoader() {
                 /* Welcome Text */
                 .welcome-text {
                     position: absolute;
-                    bottom: -80px;
-                    left: 50%;
+                    bottom: -70px;
+                    centre: 60%;
                     transform: translateX(-50%);
                     text-align: center;
                     width: 100%;
