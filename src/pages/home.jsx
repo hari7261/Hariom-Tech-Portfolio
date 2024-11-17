@@ -26,6 +26,7 @@ import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 import BubbleBackground from '@/components/BubbleBackground'
 
+
 function BriefcaseIcon(props) {
   return (
     <svg
@@ -338,6 +339,7 @@ export default function Home({ articles }) {
             }
           `}</style>
       </Head>
+
       <SimpleLayout />
       <BubbleBackground />
       <Container className="mt-6 sm:mt-9 px-4 sm:px-6 lg:px-8">
