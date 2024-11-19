@@ -1,35 +1,35 @@
-import { useEffect, useRef, useState } from 'react'
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
-import Loader from '@/components/Loader'
-import MusicPlayer from '@/components/MusicPlayer'
+import { useEffect, useRef, useState } from 'react';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import Loader from '@/components/Loader';
+import MusicPlayer from '@/components/MusicPlayer';
 
-import '@/styles/tailwind.css'
-import 'focus-visible'
+import '@/styles/tailwind.css';
+import 'focus-visible';
 
 function usePrevious(value) {
-  let ref = useRef()
+  let ref = useRef();
 
   useEffect(() => {
-    ref.current = value
-  }, [value])
+    ref.current = value;
+  }, [value]);
 
-  return ref.current
+  return ref.current;
 }
 
 export default function App({ Component, pageProps, router }) {
-  const [isLoading, setIsLoading] = useState(true)
-  let previousPathname = usePrevious(router.pathname)
+  const [isLoading, setIsLoading] = useState(true);
+  let previousPathname = usePrevious(router.pathname);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 7000) // Matches the Loader's duration
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setIsLoading(false), 7000); // Matches the Loader's duration
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
       <Loader />
-      {!isLoading && ( // Conditionally render Header and other content
+      {!isLoading && ( 
         <>
           <div className="fixed inset-0 flex justify-center sm:px-8">
             <div className="flex w-full max-w-7xl lg:px-8">
@@ -38,14 +38,14 @@ export default function App({ Component, pageProps, router }) {
           </div>
           <div className="relative">
             <Header />
-            <MusicPlayer />
             <main>
               <Component previousPathname={previousPathname} {...pageProps} />
             </main>
             <Footer />
           </div>
+          <MusicPlayer />
         </>
       )}
     </>
-  )
+  );
 }
