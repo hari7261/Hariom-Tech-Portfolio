@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import Loader from '@/components/Loader'
+import MusicPlayer from '@/components/MusicPlayer'
 
 import '@/styles/tailwind.css'
 import 'focus-visible'
@@ -37,6 +38,7 @@ export default function App({ Component, pageProps, router }) {
           </div>
           <div className="relative">
             <Header />
+            <MusicPlayer />
             <main>
               <Component previousPathname={previousPathname} {...pageProps} />
             </main>
