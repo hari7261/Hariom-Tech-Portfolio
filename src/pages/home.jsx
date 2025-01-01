@@ -362,7 +362,7 @@ export default function Home({ articles }) {
             <SocialLink href="https://github.com/hari7261" icon={GitHubIcon} />
             <SocialLink href="https://www.linkedin.com/in/hariom-kumar-pandit-2k3" icon={LinkedInIcon} />
             <SocialLink href="https://tech-blogs-gray.vercel.app" icon={BlogIcon} />
-            <SocialLink href="https://personal-chatbot-one.vercel.app" icon={ChatbotIcon} />
+            <SocialLink href="https://gemini-chatbot-phi-sage.vercel.app/" icon={ChatbotIcon} />
             <SocialLink href="https://codolio.com/profile/hariompandit5556" icon={OwlIcon} />
             <SocialLink href="https://twitter.com/Hari_Om_Pandit" icon={XIcon} label="Twitter" />
           </div>
