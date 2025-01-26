@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import Loader from '@/components/Loader';
 import MusicPlayer from '@/components/MusicPlayer';
+// import BubbleBackground from '@/components/BubbleBackground';
 
 import '@/styles/tailwind.css';
 import 'focus-visible';
@@ -29,7 +30,7 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <Loader />
-      {!isLoading && ( 
+      {!isLoading && (
         <>
           <div className="fixed inset-0 flex justify-center sm:px-8">
             <div className="flex w-full max-w-7xl lg:px-8">
@@ -37,6 +38,7 @@ export default function App({ Component, pageProps, router }) {
             </div>
           </div>
           <div className="relative">
+            {/* <BubbleBackground /> */}
             <Header />
             <main>
               <Component previousPathname={previousPathname} {...pageProps} />

@@ -1,79 +1,129 @@
-// components/BubbleBackground.tsx
+import React, { useEffect, useRef, useState } from 'react';
 
-function BubbleBackground() {
+const SpaceBackground = () => {
+  const canvasRef = useRef(null);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const bubbles = Array.from({ length: 30 });
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+
+    // Responsive canvas sizing
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    // Initial resize
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Star configuration
+    const stars = [];
+    const starCount = Math.min(200, window.innerWidth / 10);
+    const maxDepth = 1000;
+
+    // Star class with improved randomization
+    class Star {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        // More spread-out star distribution
+        this.x = (Math.random() - 0.5) * canvas.width * 2;
+        this.y = (Math.random() - 0.5) * canvas.height * 2;
+        this.z = maxDepth;
+        this.speed = Math.random() * 5 + 1;
+      }
+
+      update() {
+        this.z -= this.speed;
+
+        // More dynamic star reset
+        if (this.z <= 0 ||
+          Math.abs(this.x) > canvas.width ||
+          Math.abs(this.y) > canvas.height) {
+          this.reset();
+        }
+      }
+
+      render() {
+        // Enhanced perspective projection
+        const sx = (this.x / this.z) * 200 + canvas.width / 2;
+        const sy = (this.y / this.z) * 200 + canvas.height / 2;
+
+        // Adaptive star size and brightness
+        const size = (1 - this.z / maxDepth) * 3;
+        const opacity = 1 - this.z / maxDepth;
+
+        // Color based on mode
+        const baseColor = isDarkMode
+          ? [255, 255, 255]  // White stars in dark mode
+          : [100, 100, 200];  // Bluish stars in light mode
+
+        ctx.fillStyle = `rgba(${baseColor[0]}, ${baseColor[1]}, ${baseColor[2]}, ${opacity})`;
+
+        ctx.beginPath();
+        ctx.arc(sx, sy, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // Initialize stars
+    for (let i = 0; i < starCount; i++) {
+      stars.push(new Star());
+    }
+
+    // Animation loop
+    const animate = () => {
+      // Background color based on mode
+      ctx.fillStyle = isDarkMode
+        ? 'rgba(0, 0, 20, 0.2)'   // Deep space dark mode
+        : 'rgba(200, 220, 255, 0.2)';  // Light sky for light mode
+
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      stars.forEach(star => {
+        star.update();
+        star.render();
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    // Start animation
+    const animationFrame = requestAnimationFrame(animate);
+
+    // Listen for color scheme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleColorSchemeChange = (e) => {
+      setIsDarkMode(e.matches);
+    };
+    mediaQuery.addListener(handleColorSchemeChange);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      mediaQuery.removeListener(handleColorSchemeChange);
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [isDarkMode]);
 
   return (
-    <div className="bubble-background">
-      {bubbles.map((_, index) => (
-        <div key={index} className="bubble" />
-      ))}
-      
-      <style >{`
-        .bubble-background {
-          position: fixed; /* Keep it fixed to the background */
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          pointer-events: none; /* Prevent interaction with the bubbles */
-          z-index: -1; /* Send the background behind other elements */
-        }
-
-        .bubble {
-          position: absolute;
-          bottom: -150px; /* Start below the view */
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.3); /* Light color for bubbles */
-          animation: bubble 10s infinite; /* Speed up the animation */
-          opacity: 0.5; /* Adjust opacity for visibility */
-        }
-
-        /* Create different bubble sizes and animations */
-        .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 7.5s; }
-        .bubble:nth-child(2) { width: 60px; height: 60px; left: 30%; animation-duration: 9s; }
-        .bubble:nth-child(3) { width: 50px; height: 50px; left: 50%; animation-duration: 6s; }
-        .bubble:nth-child(4) { width: 80px; height: 80px; left: 70%; animation-duration: 10s; }
-        .bubble:nth-child(5) { width: 70px; height: 70px; left: 90%; animation-duration: 8s; }
-        .bubble:nth-child(6) { width: 30px; height: 30px; left: 20%; animation-duration: 7s; }
-        .bubble:nth-child(7) { width: 90px; height: 90px; left: 40%; animation-duration: 9.5s; }
-        .bubble:nth-child(8) { width: 20px; height: 20px; left: 60%; animation-duration: 6.5s; }
-        .bubble:nth-child(9) { width: 55px; height: 55px; left: 80%; animation-duration: 8.5s; }
-        .bubble:nth-child(10) { width: 75px; height: 75px; left: 25%; animation-duration: 5.5s; }
-        .bubble:nth-child(11) { width: 45px; height: 45px; left: 15%; animation-duration: 7s; }
-        .bubble:nth-child(12) { width: 65px; height: 65px; left: 35%; animation-duration: 8s; }
-        .bubble:nth-child(13) { width: 50px; height: 50px; left: 55%; animation-duration: 9s; }
-        .bubble:nth-child(14) { width: 75px; height: 75px; left: 75%; animation-duration: 6s; }
-        .bubble:nth-child(15) { width: 60px; height: 60px; left: 85%; animation-duration: 10s; }
-        .bubble:nth-child(16) { width: 30px; height: 30px; left: 10%; animation-duration: 7.5s; }
-        .bubble:nth-child(17) { width: 80px; height: 80px; left: 25%; animation-duration: 9.5s; }
-        .bubble:nth-child(18) { width: 55px; height: 55px; left: 45%; animation-duration: 8.5s; }
-        .bubble:nth-child(19) { width: 65px; height: 65px; left: 65%; animation-duration: 6.5s; }
-        .bubble:nth-child(20) { width: 40px; height: 40px; left: 85%; animation-duration: 8s; }
-        .bubble:nth-child(21) { width: 50px; height: 50px; left: 5%; animation-duration: 5.5s; }
-        .bubble:nth-child(22) { width: 70px; height: 70px; left: 20%; animation-duration: 7.5s; }
-        .bubble:nth-child(23) { width: 80px; height: 80px; left: 35%; animation-duration: 6s; }
-        .bubble:nth-child(24) { width: 60px; height: 60px; left: 50%; animation-duration: 7s; }
-        .bubble:nth-child(25) { width: 40px; height: 40px; left: 75%; animation-duration: 9s; }
-        .bubble:nth-child(26) { width: 30px; height: 30px; left: 90%; animation-duration: 10s; }
-        .bubble:nth-child(27) { width: 55px; height: 55px; left: 5%; animation-duration: 7.5s; }
-        .bubble:nth-child(28) { width: 45px; height: 45px; left: 30%; animation-duration: 9.5s; }
-        .bubble:nth-child(29) { width: 65px; height: 65px; left: 50%; animation-duration: 6.5s; }
-        .bubble:nth-child(30) { width: 50px; height: 50px; left: 70%; animation-duration: 8s; }
-
-        @keyframes bubble {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-800px); /* Move upwards */
-          }
-        }
-      `}</style>
-    </div>
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: -1,
+        pointerEvents: 'none'
+      }}
+    />
   );
-}
+};
 
-export default BubbleBackground;
+export default SpaceBackground;
