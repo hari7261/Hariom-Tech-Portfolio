@@ -10,6 +10,7 @@ import { SimpleLayout } from '@/components/SimpleLayout';
 import portraitImage from '@/images/portrait.webp';
 import ContactForm from '@/components/ContactForm';
 import GitHubStatsCard from '@/components/GitHubStatsComponent';
+import Skill from '@/components/Skill';
 
 export default function About() {
   return (
@@ -143,8 +144,9 @@ export default function About() {
           >
           </motion.div>
         </motion.div>
-
+        <Skill />
       </Container>
+
       {/* GitHub Stats Card */}
       <Container className="mt-8 sm:mt-12 px-4 sm:px-6 lg:px-8">
         <GitHubStatsCard />
