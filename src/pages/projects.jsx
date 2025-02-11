@@ -2,15 +2,191 @@ import Image from 'next/future/image'
 import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { FaCog, FaChartLine, FaSass, FaDocker, FaShoppingCart, FaBrain, FaShieldAlt, FaMobileAlt, FaDatabase, FaNetworkWired, FaCode, FaPaintBrush } from 'react-icons/fa'
+import { FaCog, FaChartLine, FaSass, FaDocker, FaShoppingCart, FaBrain, FaShieldAlt, FaMobileAlt, FaDatabase, FaNetworkWired, FaCode, FaPaintBrush, FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
 import youphoria from '@/images/logos/github-desktop.svg'
 import orb from '@/images/logos/orb.gif'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoHeart from '@/images/logos/gwc.png'
 import BubbleBackground from '@/components/BubbleBackground'
-// Project data with icons
+import project from '@/images/logos/project.png'
+
 const projects = [
+  {
+    name: "MysticUI",
+    description:
+      "A collection of futuristic, modern UI components and design templates.",
+    link: {
+      href: "https://mysticui.vercel.app/",
+      label: "Live Demo",
+    },
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "live"
+  },
+  {
+    name: "UML Editor",
+    description:
+      "A simple and intuitive UML diagram editor for developers and architects.",
+    link: {
+      href: "https://uml-editor-hari.vercel.app/",
+      label: "Live Demo",
+    },
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "live"
+  },
+  {
+    name: "OpenSource Learning",
+    description:
+      "A platform to start your journey into open-source development.",
+    link: {
+      href: "https://learn-open-source.vercel.app/",
+      label: "Live Demo",
+    },
+    github: "https://github.com/yourusername/opensource-learning",
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "live"
+  },
+  {
+    name: "GitHub Wrapped",
+    description:
+      "A visual summary of your GitHub activity, inspired by Spotify Wrapped.",
+    link: {
+      href: "https://github-wrapped-peach.vercel.app/",
+      label: "Live Demo",
+    },
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "live"
+  },
+  {
+    name: "Quantum Banking System",
+    description:
+      "Combines AI technology with modern banking features for financial management.",
+    link: {
+      href: "https://github.com/hari7261/Quantum-Banking-System",
+      label: "GitHub",
+    },
+    github: "https://github.com/hari7261/Quantum-Banking-System",
+    techStack: ["Python", "Django", "AI"],
+    logo: project,
+    type: "github"
+  },
+  {
+    name: "NLP Translator",
+    description:
+      "A language translation tool with auto-translate and manual modes.",
+    link: {
+      href: "https://github.com/hari7261/NLP-Translator",
+      label: "GitHub",
+    },
+    github: "https://github.com/hari7261/NLP-Translator",
+    techStack: ["Python", "NLP", "Flask"],
+    logo: project,
+    type: "github"
+  },
+  {
+    name: "AuraVoice",
+    description:
+      "A voice assistant with speech recognition and text-to-speech capabilities.",
+    link: {
+      href: "https://github.com/hari7261/AuraVoice",
+      label: "GitHub",
+    },
+    github: "https://github.com/hari7261/AuraVoice",
+    techStack: ["Python", "SpeechRecognition", "Flask"],
+    logo: project,
+    type: "github"
+  },
+  {
+    name: "Modern Data Visualization App",
+    description:
+      "A Python-based app for real-time data visualization and analysis.",
+    link: {
+      href: "https://github.com/hari7261/Data-Visualization-",
+      label: "GitHub",
+    },
+    github: "https://github.com/hari7261/Data-Visualization-",
+    techStack: ["Python", "Matplotlib", "Flask"],
+    logo: project,
+    type: "github"
+  },
+  {
+    name: "Student Management System (SMS)",
+    description:
+      "A system to manage student and teacher activities in educational institutions.",
+    link: {
+      href: "https://github.com/hari7261/StdnManage-WithCURD",
+      label: "GitHub",
+    },
+    github: "https://github.com/hari7261/StdnManage-WithCURD",
+    techStack: ["Python", "Django", "SQLite"],
+    logo: project,
+    type: "github"
+  },
+  {
+    name: "Enhanced PDF Viewer & Converter",
+    description:
+      "A desktop app for viewing, navigating, and converting PDF and Word documents.",
+    link: {
+      href: "https://github.com/hari7261/PDF-Viewer-Converter",
+      label: "GitHub",
+    },
+    github: "https://github.com/hari7261/PDF-Viewer-Converter",
+    techStack: ["Python", "Tkinter", "PyPDF2"],
+    logo: project,
+    type: "github"
+  },
+  {
+    name: "Typing Speed Test",
+    description:
+      "An advanced typing speed test with multiple difficulty levels.",
+    link: {
+      href: "https://typing-assessments.vercel.app/",
+      label: "Live Demo",
+    },
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "live"
+  },
+  {
+    name: "YouTube Clone",
+    description: "A modern, fully functional YouTube clone.",
+    link: {
+      href: "https://github.com/hari7261/Youtube-Clone",
+      label: "GitHub",
+    },
+    github: "https://github.com/hari7261/Youtube-Clone",
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "github"
+  },
+  {
+    name: "Netflix Clone",
+    description:
+      "A Netflix clone with a seamless interface for content browsing.",
+    link: {
+      href: "https://netflix-cllone.vercel.app/",
+      label: "Live Demo",
+    },
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "live"
+  },
+  {
+    name: "VidTalk",
+    description: "A peer-to-peer video calling app with instant connections.",
+    link: {
+      href: "https://vid-talk.vercel.app/",
+      label: "Live Demo",
+    },
+    github: "https://github.com/yourusername/vidtalk",
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    logo: project,
+    type: "live"
+  },
   {
     name: 'GitHub Profile Finder: Discover and Explore GitHub Users',
     description:
@@ -19,201 +195,111 @@ const projects = [
       href: 'https://github-profile-finder.vercel.app',
       label: 'Live Demo',
     },
+    github: "https://github.com/yourusername/github-profile-finder",
+    techStack: ["Next.js", "TailwindCSS", "JavaScript"],
     logo: youphoria,
+    type: "live"
   },
-
   {
     name: 'MY-PYTHON-PROJECTS',
     description:
-      'A diverse collection of Python projects showcasing various algorithms, data structures, and small applications. Ideal for beginners and enthusiasts to explore Python programming.',
+      'A diverse collection of Python projects showcasing various algorithms, data structures, and small applications.',
     link: {
       href: 'https://github.com/hari7261/MY-PYTHON-PROJECTS',
       label: 'Github',
     },
+    github: "https://github.com/hari7261/MY-PYTHON-PROJECTS",
+    techStack: ["Python", "Algorithms", "Data Structures"],
     logo: orb,
-  },
-  {
-    name: 'Modern React Portfolio',
-    description:
-      "A sleek, modern portfolio website created using React, CSS, and JavaScript. Features include a responsive design and an elegant interface to showcase skills and projects.",
-    link: { href: 'https://github.com/hari7261/modern-react-portfolio.io', label: 'Github' },
-    logo: logoHeart,
+    type: "github"
   },
   {
     name: 'Foodie Recipe.io',
     description:
-      'A recipe-sharing platform for food enthusiasts. Built using React.js and API integration, it offers a user-friendly interface to discover, share, and submit recipes.',
+      'A recipe-sharing platform for food enthusiasts. Built using React.js and API integration.',
     link: {
       href: 'https://github.com/hari7261/Foodie-recipe.io',
       label: 'Github',
     },
+    github: "https://github.com/hari7261/Foodie-recipe.io",
+    techStack: ["React", "API", "JavaScript"],
     logo: logoAnimaginary,
+    type: "github"
   },
   {
     name: 'Tic-Tac-Toe Game',
     description:
-      'A browser-based Tic-Tac-Toe game offering both single-player and multiplayer modes. Designed with HTML, CSS, and JavaScript for a simple yet interactive experience.',
+      'A browser-based Tic-Tac-Toe game offering both single-player and multiplayer modes.',
     link: {
       href: 'https://github.com/hari7261/Tic-Toe-Game',
       label: 'Github',
     },
+    github: "https://github.com/hari7261/Tic-Toe-Game",
+    techStack: ["JavaScript", "HTML", "CSS"],
     logo: logoHeart,
+    type: "github"
   },
   {
     name: 'TechFutureEmpire',
     description:
-      'A platform for discussing and sharing insights on future technology trends and innovations. Built using HTML, CSS, and JavaScript.',
+      'A platform for discussing and sharing insights on future technology trends and innovations.',
     link: {
       href: 'https://github.com/hari7261/TechFutureEmpire',
       label: 'Github',
     },
+    github: "https://github.com/hari7261/TechFutureEmpire",
+    techStack: ["React", "TailwindCSS", "JavaScript"],
     logo: orb,
+    type: "github"
   },
   {
     name: 'Connect-4 Game',
     description:
-      'A classic Connect-4 game implemented for web browsers, allowing players to enjoy this traditional game in a digital format. Developed using HTML, CSS, and JavaScript.',
+      'A classic Connect-4 game implemented for web browsers.',
     link: {
       href: 'https://github.com/hari7261/Connect-4-Game',
       label: 'Github',
     },
+    github: "https://github.com/hari7261/Connect-4-Game",
+    techStack: ["JavaScript", "HTML", "CSS"],
     logo: logoOpenShuttle,
+    type: "github"
   },
   {
-    name: 'Hariom\'s Portfolio',
+    name: "Hariom's Portfolio",
     description:
-      'A personal portfolio showcasing web development skills, projects, and experiences. Built with HTML, CSS, and JavaScript, offering a responsive and visually appealing design.',
+      'A personal portfolio showcasing web development skills, projects, and experiences.',
     link: {
       href: 'https://github.com/hari7261/Hariom--Portfolio',
       label: 'Github',
     },
+    github: "https://github.com/hari7261/Hariom--Portfolio",
+    techStack: ["React", "TailwindCSS", "JavaScript"],
     logo: youphoria,
+    type: "github"
   },
   {
     name: 'CodeVision',
     description:
-      'A team-based project portfolio site highlighting various projects by the CodeVision team, featuring member profiles, skills, certifications, and more. Built with HTML, CSS, and JavaScript.',
+      'A team-based project portfolio site highlighting various projects by the CodeVision team.',
     link: {
       href: 'https://github.com/hari7261/CodeVision',
       label: 'Github',
     },
+    github: "https://github.com/hari7261/CodeVision",
+    techStack: ["React", "TailwindCSS", "JavaScript"],
     logo: orb,
+    type: "github"
   },
 ]
 
-
-
-const upcomingProjects = [
-  {
-    id: 1,
-    title: 'CloudFlow',
-    description: 'SaaS project management tool with AI-powered insights.',
-    category: 'SaaS',
-    techStack: ['React', 'Node.js', 'MongoDB', 'AWS'],
-    icon: <FaSass className="text-xl text-teal-500" />,
-  },
-  {
-    id: 2,
-    title: 'DevOps Platform',
-    description: 'PaaS solution for streamlined development and deployment.',
-    category: 'PaaS',
-    techStack: ['Docker', 'Kubernetes', 'Jenkins', 'Go'],
-    icon: <FaDocker className="text-xl text-blue-500" />,
-  },
-  {
-    id: 3,
-    title: 'E-commerce Engine',
-    description: 'Robust e-commerce platform with custom features and integrations.',
-    category: 'E-commerce',
-    techStack: ['Ruby on Rails', 'PostgreSQL', 'Redis', 'Stripe'],
-    icon: <FaShoppingCart className="text-xl text-orange-500" />,
-  },
-  {
-    id: 4,
-    title: 'AI Analytics Suite',
-    description: 'AI-powered analytics platform for data-driven decision making.',
-    category: 'AI',
-    techStack: ['Python', 'TensorFlow', 'BigQuery', 'GCP'],
-    icon: <FaBrain className="text-xl text-purple-500" />,
-  },
-  {
-    id: 5,
-    title: 'Network Security Pro',
-    description: 'Advanced cybersecurity solutions for enterprise networks.',
-    category: 'Cybersecurity',
-    techStack: ['Fortinet', 'Snort', 'Splunk', 'Cisco'],
-    icon: <FaShieldAlt className="text-xl text-red-500" />,
-  },
-  {
-    id: 6,
-    title: 'MobileApp Builder',
-    description: 'Cross-platform mobile app development with a focus on performance.',
-    category: 'Mobile App',
-    techStack: ['Flutter', 'Firebase', 'Dart', 'Git'],
-    icon: <FaMobileAlt className="text-xl text-green-500" />,
-  },
-  {
-    id: 7,
-    title: 'Database Manager',
-    description: 'Comprehensive database management and optimization tools.',
-    category: 'Database',
-    techStack: ['MySQL', 'MongoDB', 'Redis', 'AWS RDS'],
-    icon: <FaDatabase className="text-xl text-yellow-500" />,
-  },
-  {
-    id: 8,
-    title: 'IoT Connect',
-    description: 'Platform for managing and connecting IoT devices with ease.',
-    category: 'IoT',
-    techStack: ['Node.js', 'MQTT', 'AWS IoT', 'Azure'],
-    icon: <FaNetworkWired className="text-xl text-cyan-500" />,
-  },
-  {
-    id: 9,
-    title: 'Web Dev Suite',
-    description: 'All-in-one toolkit for modern web development practices.',
-    category: 'Web Dev',
-    techStack: ['Next.js', 'GraphQL', 'TypeScript', 'Vercel'],
-    icon: <FaCode className="text-xl text-indigo-500" />,
-  },
-  {
-    id: 10,
-    title: 'Design Studio',
-    description: 'Creative tools for graphic design and multimedia content.',
-    category: 'Design',
-    techStack: ['Adobe Creative Cloud', 'Figma', 'Sketch', 'InVision'],
-    icon: <FaPaintBrush className="text-xl text-pink-500" />,
-  },
-  {
-    id: 11,
-    title: 'AI Analytics Platform',
-    description: 'Advanced analytics and predictive insights powered by AI. Ideal for data-driven decision making.',
-    category: 'Analytics',
-    techStack: ['TensorFlow', 'PyTorch', 'Google Cloud AI', 'Microsoft Azure ML'],
-    icon: <FaChartLine className="text-xl text-blue-500" />,
-},
-{
-    id: 12,
-    title: 'Smart Automation Suite',
-    description: 'Automate repetitive tasks and workflows using AI-driven solutions. Boost productivity and efficiency.',
-    category: 'Automation',
-    techStack: ['Zapier', 'UiPath', 'IBM Watson', 'Amazon Lex'],
-    icon: <FaCog className="text-xl text-green-500" />,
-}
-
-]
-
-function LinkIcon(props) {
+function TechStackBadge({ tech }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
-        fill="currentColor"
-      />
-    </svg>
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mr-2 mb-2">
+      {tech}
+    </span>
   )
 }
-
 
 export default function Projects() {
   return (
@@ -224,67 +310,62 @@ export default function Projects() {
         <meta name="description" content="Things I’ve made trying to put my dent in the universe." />
       </Head>
       <BubbleBackground />
-      {/* <FuturisticBackground /> */}
       <SimpleLayout
-    title={
-      <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-green-500 bg-clip-text text-transparent animate-gradient-fast">
-        A couple of my favorite personal projects.
-      </span>
-    }
-    intro="Here’s a collection of some projects I’m really proud of."
-  >
-
-{/* Content of the layout goes here */}
-<ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+        title={
+          <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-green-500 bg-clip-text text-transparent animate-gradient-fast">
+            A couple of my favorite personal projects.
+          </span>
+        }
+        intro="Here’s a collection of some projects I’m really proud of."
+      >
+        <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <Card as="li" key={project.name}>
+            <Card as="li" key={project.name} className="flex flex-col">
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image src={project.logo} alt={project.name} width={48} height={48} />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                {project.name}
               </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+              <Card.Description className="flex-grow">
+                {project.description}
+              </Card.Description>
+              
+              {/* Tech Stack Section */}
+              <div className="mt-4 flex flex-wrap">
+                {project.techStack.map((tech) => (
+                  <TechStackBadge key={tech} tech={tech} />
+                ))}
+              </div>
+
+              {/* Buttons Section */}
+              <div className="mt-6 flex gap-4">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    <FaGithub className="w-4 h-4" />
+                    GitHub
+                  </a>
+                )}
+                {project.type === 'live' && (
+                  <a
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+                  >
+                    <FaExternalLinkAlt className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </Card>
           ))}
         </ul>
-
-        {/* Divider with blue shadow */}
-        <div className="my-12 border-t-4 border-blue-500 shadow-lg shadow-blue-500/30"></div>
-
-        <section className="mt-12">
-        <h1 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100 text-center mb-6">
-    ---------Upcoming Projects---------</h1>
-          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-6">
-          {upcomingProjects.map((project) => (
-  <Card
-    as="li"
-    key={project.id}
-    className="relative p-4 bg-white border border-blue-500 shadow-lg shadow-blue-500/30 rounded-2xl transition-transform transform hover:scale-105 hover:shadow-blue-500/50 dark:bg-zinc-800 dark:border-blue-400 dark:shadow-blue-600/30"
-  >
-    <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-700 dark:ring-0 dark:shadow-zinc-600/50">
-      {project.icon}
-    </div>
-    <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-      {project.title}
-    </h2>
-    <Card.Description>{project.description}</Card.Description>
-    <div className="mt-4">
-      <h3 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Tech Stack</h3>
-      <ul className="mt-2 list-disc list-inside text-sm text-zinc-700 dark:text-zinc-300">
-        {project.techStack.map((tech, index) => (
-          <li key={index}>{tech}</li>
-        ))}
-      </ul>
-    </div>
-  </Card>
-))}
-          </ul>
-        </section>
       </SimpleLayout>
     </>
   )

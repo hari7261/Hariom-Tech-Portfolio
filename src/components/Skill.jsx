@@ -56,35 +56,29 @@ const SkillGroup = ({ title, skills }) => (
 
 export default function SkillsShowcase() {
     const frontendSkills = [
-        "HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Zustand", "Redux",
+        "HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js",
         "Tailwind CSS", "Framer Motion", "Material UI", "Chakra UI", "ShadCN/UI",
         "SSR (Server-Side Rendering)", "Unit Testing", "Performance Optimization"
     ]
 
     const backendSkills = [
-        "Node.js", "Bun", "Express.js", "Nest.js", "REST API", "GraphQL", "WebSockets",
-        "Zod Validation", "JWT / OAuth", "SQL", "PostgreSQL", "MongoDB", "Firebase",
-        "Prisma ORM", "Mongoose", "Database Modeling", "Stripe Payments"
+        "Node.js", "Bun", "Express.js", "WebSockets",
+         "JWT / OAuth", "SQL", "Firebase",
+    , "Mongoose", "Database Modeling", "Stripe Payments", "supabase",
     ]
 
     const cloudDevOpsSkills = [
-        "AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "Terraform", "CI/CD",
-        "Nginx", "Cloudflare", "DigitalOcean", "Vercel", "Netlify", "VPS", "Linux"
+        "AWS (EC2, S3, Lambda)", "Docker", "Terraform", "Cloudflare", "DigitalOcean", "Vercel", "Netlify", "Linux"
     ]
 
     const aiMachineLearningSkills = [
         "Python", "TensorFlow", "PyTorch", "OpenAI API", "LangChain",
-        "AI Agents", "Vector Databases", "Pinecone", "Hugging Face"
-    ]
-
-    const systemDesignSkills = [
-        "Microservices", "Monolith to Microservices Migration", "Event-Driven Architecture",
-        "Scalability & Performance Optimization", "Caching Strategies", "Rate Limiting"
+        "AI Agents",  "Hugging Face"
     ]
 
     const otherSkills = [
-        "Git", "GitHub", "GitLab", "Bitbucket", "WordPress", "Blockchain Basics",
-        "Web3 Development", "Smart Contracts (Solidity)", "Three.js", "D3.js"
+        "Git", "GitHub", "Blockchain Basics",
+          "Three.js(Basics)",
     ]
 
     const designSkills = ["UX/UI Design", "Product Design", "Figma", "Adobe XD", "Wireframing", "Prototyping"]
@@ -104,7 +98,6 @@ export default function SkillsShowcase() {
                     <SkillGroup title="Backend Development" skills={backendSkills} />
                     <SkillGroup title="Cloud & DevOps" skills={cloudDevOpsSkills} />
                     <SkillGroup title="AI & Machine Learning" skills={aiMachineLearningSkills} />
-                    <SkillGroup title="System Design & Architecture" skills={systemDesignSkills} />
                     <SkillGroup title="Other Technologies" skills={otherSkills} />
                     <SkillGroup title="Design" skills={designSkills} />
                 </div>
