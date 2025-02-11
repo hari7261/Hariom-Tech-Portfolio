@@ -2,14 +2,14 @@ import Image from 'next/future/image'
 import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { FaCog, FaChartLine, FaSass, FaDocker, FaShoppingCart, FaBrain, FaShieldAlt, FaMobileAlt, FaDatabase, FaNetworkWired, FaCode, FaPaintBrush, FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import {  FaCode, FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
 import youphoria from '@/images/logos/github-desktop.svg'
 import orb from '@/images/logos/orb.gif'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoHeart from '@/images/logos/gwc.png'
 import BubbleBackground from '@/components/BubbleBackground'
-import project from '@/images/logos/fypm1.svg'
+import project from '@/images/logos/animaginary.svg'  
 
 const projects = [
   {
@@ -322,7 +322,21 @@ export default function Projects() {
           {projects.map((project) => (
             <Card as="li" key={project.name} className="flex flex-col">
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image src={project.logo} alt={project.name} width={48} height={48} />
+                {project.logo ? (
+                  <Image 
+                    src={project.logo} 
+                    alt={project.name} 
+                    width={48} 
+                    height={48}
+                    onError={(e) => {
+                      e.target.src = '/fallback-image.png' // Add a fallback image
+                    }}
+                  />
+                ) : (
+                  <div className="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                    <FaCode className="w-6 h-6 text-gray-500" />
+                  </div>
+                )}
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 {project.name}
