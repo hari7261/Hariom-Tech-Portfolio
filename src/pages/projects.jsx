@@ -9,7 +9,7 @@ import orb from '@/images/logos/orb.gif'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoHeart from '@/images/logos/gwc.png'
 import BubbleBackground from '@/components/BubbleBackground'
-import project from '@/images/logos/project.png'
+import project from '@/images/logos/fypm1.svg'
 
 const projects = [
   {
