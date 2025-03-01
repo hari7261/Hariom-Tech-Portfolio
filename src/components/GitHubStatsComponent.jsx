@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, GitFork, Star } from 'lucide-react';
+import Image from 'next/image';
 
 // GitHub API component to fetch user stats
 const GitHubStatsComponent = ({ username }) => {
@@ -71,9 +72,11 @@ const GitHubStatsComponent = ({ username }) => {
     return (
         <div className="bg-white dark:bg-gray-900 shadow-lg rounded-2xl p-6 transition-colors duration-300 max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center md:space-x-6 mb-6">
-                <img
+                <Image
                     src={userStats.avatarUrl}
                     alt={`${username}'s GitHub avatar`}
+                    width={96}
+                    height={96}
                     className="w-24 h-24 rounded-full border-4 border-blue-500 dark:border-blue-300"
                 />
                 <div className="text-center md:text-left mt-4 md:mt-0">
@@ -112,7 +115,7 @@ const GitHubStatsComponent = ({ username }) => {
                 <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">
                     GitHub Contribution Graph
                 </h3>
-                <img
+                <Image
                     src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=tokyonight&border_radius=7&date_format=M%20j%5B%2C%20Y%5D&card_width=700&card_height=350`}
                     alt="GitHub Streak Stats"
                     className="w-full h-40 object-contain mb-4 rounded-md shadow-md transition-transform transform hover:scale-105"
@@ -124,7 +127,7 @@ const GitHubStatsComponent = ({ username }) => {
                 <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">
                     GitHub Activity Graph
                 </h3>
-                <img
+                <Image
                     src={`https://github-readme-activity-graph.vercel.app/graph?username=${username}&bg_color=0d0d0d&color=06fe65&line=04ff00&point=00b33e&area=true&hide_border=true`}
                     alt="GitHub Activity Graph"
                     className="w-full object-contain mb-4 rounded-md shadow-md transition-transform transform hover:scale-105"
@@ -137,7 +140,7 @@ const GitHubStatsComponent = ({ username }) => {
                     Holopin Badges
                 </h3>
                 <a href="https://holopin.io/@hari7261" target="_blank" rel="noopener noreferrer">
-                    <img
+                    <Image
                         src="https://holopin.me/hari7261"
                         alt="Holopin Badges"
                         className="mx-auto w-full h-auto max-w-lg rounded-md shadow-md transition-transform transform hover:scale-105"
